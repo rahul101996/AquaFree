@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/* font source sans pro  */
+/* @import url("@fontsource/source-sans-pro");
+@import url("@fontsource/source-sans-pro/400.css");
+@import url("@fontsource/source-sans-pro/400-italic.css"); */
+
+@font-face {
+  font-family: "CitadelScriptStd";
+  /* The name you'll use in CSS */
+  src: url("../../public/assets/fonts/CitadelScriptStd.otf") format("opentype");
+  /* Path to the font file */
+  font-weight: 200;
+  /* Optional: can define bold/regular separately */
+  font-style: normal;
+  /* Optional: for italic or oblique styles */
+}
+
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --skyBlue: #0093cf;
+  --deepOcean: #065591;
+  --vibrantGreen: #599b55;
+  --forestGreen: #0A4833;
+  --greenShade: #044413;
+  --bodyContent: #06304F;
+  /* --forestGreen: #009689; */
+  --primary: #ffffff;
+  --secondary: #ffffff;
+  --heading1: #ffffff;
+  --heading2: #005490;
+  --button1: #005c3d;
+  --helpYou: white;
+  --tileText: 1.1vw;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@keyframes floatX {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* Custom typing animation */
+
+@layer utilities {
+  .typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite;
+    width: 0ch;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0ch;
+    }
+
+    100% {
+      width: 28ch;
+      /* match number of characters in your text */
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+
+    100% {
+      border-color: black;
+    }
+  }
+
+  .loop-typing {
+    animation: typing 4s steps(20, end) infinite, blink 0.75s step-end infinite;
+  }
+
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .font-nunito {
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  .font-times {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .font-noto {
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  .font-lora {
+    font-family: "Lora", serif;
+  }
+
+  .font-sans {
+    font-family: "Source Sans Pro";
+  }
+
+  .font-citadel {
+    font-family: "CitadelScriptStd";
+  }
+
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .font-lato {
+    font-family: "Lato", sans-serif;
+  }
+
+  .filter-dark-green {
+    filter: sepia(1) saturate(7) hue-rotate(95deg) brightness(0.3) contrast(1.2);
+  }
+
+  .lineHeight {
+    line-height: 1.2;
+  }
+
+  .tileText {
+    /* font-size: 1.1vw; */
+    font-size: clamp(18px, 1.1vw, 80px);
+  }
+
+  .smallText {
+    font-size: clamp(18px, 1.1vw, 80px);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #d1d1d1 #005490;
+    /* Firefox */
+
+    /* Webkit (Chrome, Edge, Safari) */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #e63611;
+    border-radius: 2px;
+    border: 2px solid #000000;
+  }
+}
+
+.float-x {
+  /* animation: floatX 3s ease-in-out infinite; */
+  animation: floatX 10s ease-in-out infinite;
+  /* slower speed */
+}
+
+body {
+  font-family: "Source Sans Pro";
+  background-color: var(--primary);
+
+  /* background-color: #f2e4cf; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
